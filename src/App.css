@@ -1,38 +1,317 @@
-.App {
+.App{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  margin: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.searchBar{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.searchBar input[type=text]:focus{
+  background-color: white;
+  border-color: transparent;
+  outline: none;
+  border-bottom: 2px solid black;
+}
+.searchBar input[type=text]:active{
+  background-color: white;
+  outline: none;
+  border-color: transparent;
+  border-bottom: 2px solid black;
+}
+.searchBar input[type=text] {
+  border-color: transparent;
+  width: 25%;
+  border-bottom: 2px solid black;
+  font-size: 1.2rem;
+}
+
+.searchBar button{
+  padding: 0.2rem 2rem;
+  background: black;
+  color: white;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.movie{
+  margin: 1rem 0.7rem;
+  border: 1px solid black;
+}
+
+.movie img{
+  width: 220px;
+  height: 350px;
+}
+
+.movie-title{
+  /* border: 1px solid black; */
+  width: 220px;
+}
+
+.movie-title p{
+  font-weight: bold;
+
+}
+
+.movie-detailsBtn {
+  padding: 0.5rem 2rem;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  transition: .5s;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.movie-detailsBtn:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.modal-main {
+  position:fixed;
+  background: white;
+  width: 80%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.modal-body{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.modal-info{
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
+
+.modal-img {
+  padding: 1rem;
+
+}
+
+.modal-img img {
+  width: fit-content;
+  height: auto;
+  border: 2px solid black;
+}
+
+.modal-info{
+  margin-left: 2rem;
+  text-align: left;
+}
+
+
+.modal-closebtn {
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  bottom: 50%;
+  transition: .5s;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.modal-closebtn:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+
+.pages {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+}
+
+.pages b {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 1.5rem;
+  margin: 0.5rem;
+  transition: .5s;
+}
+
+.pages b:hover{
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.actualPage {
+  font-size: 1.5rem;
+  background-color: black;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+@media only screen and (max-width: 675px) {
+  .movie{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-content: space-around; */
+    margin: 1rem 0.5rem;
+    border: 1px solid black;
+    height: 320px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .movie img{
+    width: 140px;
+    height: 210px;
+  }
+
+  .movie-title{
+    font-size: 0.8rem;
+    width: 140px;
+    height: 70px;
+  }
+
+  .movie-detailsBtn {
+    width: 100%;
+    height: auto;
+    font-size: 0.8rem;
+    font-weight: bolder;
+  }
+
+  .modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 530px;
+    font-size: 0.8rem;
+  }
+
+  .modal-closebtn {
+    padding: 0.4rem 2rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    bottom: 50%;
+    border: 1px solid black;
+    transition: .5s;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+
+  .modal-closebtn:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+  }
+  
+}
+
+@media only screen and (min-width: 676px) and (max-width: 768px) {
+  .searchBar{
+    display: flex;
+    justify-content: center;
+  }
+
+  .searchBar input[type=text] {
+    width: 50%;
+    height: 1.5rem;
+    font-size: 2rem;
+  }
+  
+  .searchBar button{
+    padding: 0rem 2rem;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  .movie img{
+    width: 180px;
+    height: 250px;
+  }
+
+  .movie-title{
+    font-size: 0.8rem;
+    width: 180px;
+    height: 65px;
+  }
+
+  .movie-detailsBtn {
+    width: 100%;
+    height: auto;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    margin-top: 0.5rem;
+  }
+
+  .modal-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 400px;
+    font-size: 1rem;
+  }
+
+  .modal-img img{
+    width: 200px;
+    height: auto;
+  }
+
+
+  .pages {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+  }
+  
+  .pages b {
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .pages b:hover{
+    background-color: white;
+    color: black;
+  }
+  
+  .actualPage {
+    font-size: 1rem;
+    background-color: black;
+    color: white;
   }
 }
